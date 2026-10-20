@@ -1,30 +1,34 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Check, Copy, Github, Linkedin, Mail, Phone } from 'lucide-react'
+import { Check, Copy, ExternalLink, Github, Linkedin, Mail, Phone } from 'lucide-react'
 import { data } from '../data'
 
 const links = [
   {
     label: 'Email',
     value: data.personal.email,
+    display: data.personal.email,
     href: `mailto:${data.personal.email}`,
     icon: Mail,
   },
   {
     label: 'LinkedIn',
-    value: 'linkedin.com/in/aditya-panda-520841215',
+    value: data.personal.linkedin,
+    display: data.personal.linkedinDisplay,
     href: data.personal.linkedin,
     icon: Linkedin,
   },
   {
     label: 'GitHub',
-    value: 'github.com/panda-510',
+    value: data.personal.github,
+    display: data.personal.githubDisplay,
     href: data.personal.github,
     icon: Github,
   },
   {
     label: 'Phone',
     value: data.personal.phone,
+    display: data.personal.phone,
     href: `tel:${data.personal.phone.replace(/[^+\d]/g, '')}`,
     icon: Phone,
   },
@@ -47,16 +51,18 @@ export default function Contact() {
     <section id="contact" className="section-shell pb-20">
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
-          className="surface-card contact-panel p-6 sm:p-8"
+          transition={{ duration: 0.45 }}
+          className="surface-card contact-panel p-6 sm:p-9"
         >
-          <p className="section-kicker">Contact</p>
-          <h2 className="section-title max-w-2xl">Let’s keep it simple: if there’s a role, project, or collaboration worth discussing, reach out.</h2>
-          <p className="body-copy mt-4 max-w-2xl">
-            I’m currently based in {data.personal.location} and open to software engineering opportunities, freelance work, and strong product teams.
+          <p className="section-kicker">Get in Touch</p>
+          <h2 className="section-title max-w-2xl">
+            Let’s discuss engineering roles, payment infrastructure, and AI systems.
+          </h2>
+          <p className="body-copy mt-4 max-w-2xl text-[1rem]">
+            Based in {data.personal.location}. Open to software engineering roles, Generative AI integration, and building reliable production systems.
           </p>
 
           <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-8">
@@ -67,34 +73,47 @@ export default function Contact() {
               return (
                 <motion.div
                   key={link.label}
-                  initial={{ opacity: 0, y: 18 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: index * 0.06 }}
-                  className="surface-subcard contact-card p-4 hover:-translate-y-1 transition-transform duration-200"
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="surface-subcard contact-card p-4 hover:-translate-y-1 transition-all duration-200"
                 >
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex flex-col">
+                    <div className="flex items-center justify-between">
+                      <div className="contact-icon">
+                        <Icon size={16} />
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => handleCopy(link.label, link.href.startsWith('http') ? link.href : link.value)}
+                        className="copy-mini-button"
+                        aria-label={`Copy ${link.label}`}
+                        title={`Copy ${link.label}`}
+                      >
+                        {copiedThis ? <Check size={13} className="text-[var(--accent)]" /> : <Copy size={13} />}
+                      </button>
+                    </div>
+
                     <a
                       href={link.href}
                       target={link.href.startsWith('http') ? '_blank' : undefined}
                       rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="min-w-0 flex-1"
+                      className="min-w-0 block mt-4 group"
                     >
-                      <div className="contact-icon">
-                        <Icon size={18} />
+                      <div className="flex items-center justify-between">
+                        <p className="muted-text text-xs uppercase tracking-wider font-mono font-semibold">{link.label}</p>
+                        {link.href.startsWith('http') && (
+                          <ExternalLink size={12} className="text-[var(--muted-light)] group-hover:text-[var(--accent)] transition-colors" />
+                        )}
                       </div>
-                      <p className="muted-text text-sm mt-4">{link.label}</p>
-                      <p className="text-sm sm:text-base font-medium mt-1 contact-value">{link.value}</p>
+                      <p
+                        className="text-sm font-semibold mt-1 text-[var(--text)] group-hover:text-[var(--accent)] transition-colors"
+                        style={{ wordBreak: 'break-all', overflowWrap: 'anywhere' }}
+                      >
+                        {link.display}
+                      </p>
                     </a>
-
-                    <button
-                      type="button"
-                      onClick={() => handleCopy(link.label, link.href.startsWith('http') ? link.href : link.value)}
-                      className="copy-mini-button"
-                      aria-label={`Copy ${link.label}`}
-                    >
-                      {copiedThis ? <Check size={14} /> : <Copy size={14} />}
-                    </button>
                   </div>
                 </motion.div>
               )

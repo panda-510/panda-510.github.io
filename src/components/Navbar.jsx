@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Github, Linkedin, Menu, Moon, Sun, X } from 'lucide-react'
+import { ArrowRight, Linkedin, Menu, Moon, Sun, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { data } from '../data'
 
@@ -8,7 +8,7 @@ export default function Navbar({ theme, onToggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
+    const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -24,20 +24,22 @@ export default function Navbar({ theme, onToggleTheme }) {
   return (
     <>
       <motion.nav
-        initial={{ y: -48, opacity: 0 }}
+        initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.55 }}
+        transition={{ duration: 0.45 }}
         className={`navbar-shell ${scrolled ? 'navbar-solid' : ''}`}
       >
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
-          <button onClick={() => scrollTo('about')} className="brand-mark" aria-label="Go to top">
-            <span className="brand-badge">AP</span>
-            <span className="brand-name text-xs sm:text-sm font-medium tracking-[0.14em] sm:tracking-[0.18em] uppercase">
+          {/* Brand Mark */}
+          <button onClick={() => scrollTo('about')} className="brand-mark group" aria-label="Go to top">
+            <span className="brand-badge group-hover:scale-105 transition-transform">AP</span>
+            <span className="brand-name text-xs sm:text-sm font-extrabold tracking-[0.16em] uppercase">
               Aditya Panda
             </span>
           </button>
 
-          <div className="hidden md:flex items-center gap-2">
+          {/* Desktop Nav Links */}
+          <div className="hidden md:flex items-center gap-1 lg:gap-2">
             {data.nav.map((item) => (
               <button
                 key={item}
@@ -49,23 +51,26 @@ export default function Navbar({ theme, onToggleTheme }) {
             ))}
           </div>
 
-          <div className="flex items-center gap-2">
+          {/* Right Actions */}
+          <div className="flex items-center gap-2.5">
             <button
               onClick={onToggleTheme}
               className="icon-button"
               aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
+              title={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
             >
-              {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
+              {theme === 'light' ? <Sun size={15} /> : <Moon size={15} />}
             </button>
 
             <a
               href={data.personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="button-secondary hidden sm:inline-flex"
+              className="button-dark hidden sm:inline-flex group"
             >
-              <Linkedin size={16} />
-              LinkedIn
+              <Linkedin size={14} />
+              <span>LinkedIn</span>
+              <ArrowRight size={13} className="stripe-arrow" />
             </a>
 
             <button
@@ -73,22 +78,23 @@ export default function Navbar({ theme, onToggleTheme }) {
               className="icon-button md:hidden"
               aria-label="Toggle navigation"
             >
-              {menuOpen ? <X size={18} /> : <Menu size={18} />}
+              {menuOpen ? <X size={17} /> : <Menu size={17} />}
             </button>
           </div>
         </div>
       </motion.nav>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -12 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
             className="mobile-panel md:hidden"
           >
-            <div className="px-5 py-4 flex flex-col gap-2">
+            <div className="px-5 py-4 flex flex-col gap-1">
               {data.nav.map((item) => (
                 <button
                   key={item}
@@ -98,24 +104,18 @@ export default function Navbar({ theme, onToggleTheme }) {
                   {item}
                 </button>
               ))}
-              <a
-                href={data.personal.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mobile-nav-link inline-flex items-center gap-2"
-              >
-                <Linkedin size={16} />
-                LinkedIn
-              </a>
-              <a
-                href={data.personal.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mobile-nav-link inline-flex items-center gap-2"
-              >
-                <Github size={16} />
-                GitHub
-              </a>
+              <div className="pt-2 mt-2 border-t border-[var(--surface-border)]">
+                <a
+                  href={data.personal.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button-dark w-full justify-center gap-2"
+                >
+                  <Linkedin size={15} />
+                  <span>LinkedIn</span>
+                  <ArrowRight size={14} />
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

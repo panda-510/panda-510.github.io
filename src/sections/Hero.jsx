@@ -1,107 +1,134 @@
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, MapPin } from 'lucide-react'
+import { ArrowRight, BarChart3, Box, Download, Users, Zap } from 'lucide-react'
 import { data } from '../data'
-import { useTypewriter } from '../hooks/useTypewriter'
 
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, y: 16 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.6, delay },
+  transition: { duration: 0.5, delay },
 })
 
+const statIcons = {
+  zap: Zap,
+  users: Users,
+  chart: BarChart3,
+  box: Box,
+}
+
 export default function Hero() {
-  const typed = useTypewriter(data.personal.taglines, { speed: 70, pause: 2000 })
+  const scrollTo = (id) => {
+    const el = document.getElementById(id)
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 
   return (
     <section id="about" className="hero-section">
-      <div className="max-w-6xl mx-auto px-5 sm:px-6 pt-28 pb-10">
-        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 pt-20 sm:pt-28 pb-14 sm:pb-20">
+        <div className="grid lg:grid-cols-[1.22fr_0.78fr] gap-10 lg:gap-14 items-center">
+          {/* Left Column: Headline, Bio & CTAs */}
           <div>
-            <motion.div {...fadeUp(0.05)} className="hero-pill-row mb-6">
-              <div className="eyebrow-pill">
-                <span className="status-dot" />
-                Open to software engineering opportunities
-              </div>
-
-              <div className="location-row">
-                <span className="location-icon-wrap">
-                  <MapPin size={14} />
-                </span>
-                <span>{data.personal.location}</span>
-              </div>
+            <motion.div {...fadeUp(0.04)} className="mb-6">
+              <span className="hero-badge-pill">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm animate-pulse" />
+                <span>{data.experience[0].role} &bull; {data.experience[0].company}</span>
+              </span>
             </motion.div>
 
             <motion.h1
-              {...fadeUp(0.15)}
-              className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.95] tracking-[-0.04em] max-w-3xl"
+              {...fadeUp(0.1)}
+              className="hero-title max-w-2xl"
             >
-              Building modern product systems with a clean engineering mindset.
+              {data.personal.headlineLead}{' '}
+              <span className="hero-gradient-text">
+                {data.personal.headlineAccent}
+              </span>
             </motion.h1>
 
-            <motion.p {...fadeUp(0.22)} className="hero-subtitle mt-5 max-w-2xl">
-              {data.personal.subtitle}
+            <motion.p
+              {...fadeUp(0.18)}
+              className="body-copy mt-6 max-w-xl text-[1.08rem] leading-[1.7]"
+            >
+              {data.personal.heroBio}
             </motion.p>
 
-            <motion.p {...fadeUp(0.28)} className="body-copy mt-6 max-w-2xl">
-              {data.personal.summary}
-            </motion.p>
-
-            <motion.div {...fadeUp(0.34)} className="type-strip mt-6">
-              <span className="type-label">Now focused on</span>
-              <span className="type-value">{typed}</span>
-            </motion.div>
-
-            <motion.div {...fadeUp(0.4)} className="flex flex-wrap gap-3 mt-8">
-              <a href={`mailto:${data.personal.email}`} className="button-primary">
-                <Mail size={16} />
-                Email me
-              </a>
-              <a
-                href={data.personal.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button-secondary"
+            <motion.div {...fadeUp(0.26)} className="flex flex-wrap items-center gap-3.5 mt-8">
+              <button
+                onClick={() => scrollTo('projects')}
+                className="button-primary group"
               >
-                <Linkedin size={16} />
-                LinkedIn
-              </a>
+                <span>Explore Projects</span>
+                <ArrowRight size={15} className="stripe-arrow" />
+              </button>
+
               <a
-                href={data.personal.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button-secondary"
+                href={data.personal.resume}
+                download="Aditya_Panda_Resume.pdf"
+                className="button-outline"
               >
-                <Github size={16} />
-                GitHub
+                <span>Download Resume</span>
+                <Download size={14} />
               </a>
             </motion.div>
           </div>
 
+          {/* Right Column: Stripe Dashboard & Live Metric Showcase */}
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="surface-card hero-panel"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="stripe-dashboard-card"
           >
-            <p className="section-kicker">Snapshot</p>
-            <div className="space-y-5 mt-5">
-              {data.stats.map((stat) => (
-                <div key={stat.label} className="hero-stat-row">
-                  <div>
-                    <p className="stat-value">{stat.value}</p>
-                    <p className="muted-text text-sm">{stat.label}</p>
-                  </div>
-                </div>
-              ))}
+            {/* Terminal Tab Bar */}
+            <div className="stripe-terminal-bar">
+              <div className="stripe-dots">
+                <span className="stripe-dot bg-rose-400" />
+                <span className="stripe-dot bg-amber-400" />
+                <span className="stripe-dot bg-emerald-400" />
+              </div>
+              <span>api.nttdata.payments/live</span>
+              <span className="text-emerald-500 font-semibold font-mono text-[0.7rem] uppercase">HTTP 200 OK</span>
             </div>
 
-            <div className="hero-mini-card mt-6">
-              <p className="section-kicker">Current role</p>
-              <h2 className="text-xl font-semibold mt-2">{data.experience[0].role}</h2>
-              <p className="body-copy mt-2">{data.experience[0].company}</p>
-              <p className="muted-text text-sm mt-3">{data.experience[0].period}</p>
+            <div className="p-6 sm:p-7">
+              {/* Stat Rows */}
+              <div className="space-y-4">
+                {data.stats.map((stat) => {
+                  const IconComponent = statIcons[stat.icon] || Zap
+                  return (
+                    <div key={stat.label} className="stat-row flex items-center gap-4 p-2 rounded-xl hover:bg-[var(--bg-soft)] transition-colors">
+                      <div className="stat-icon-badge">
+                        <IconComponent size={16} />
+                      </div>
+                      <div>
+                        <p className="stat-value">{stat.value}</p>
+                        <p className="stat-label">{stat.label}</p>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* Status Section */}
+              <div className="pt-5 mt-5 border-t border-[var(--surface-border)]">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm animate-pulse" />
+                    <span className="text-xs font-semibold text-[var(--muted)]">Status: Active</span>
+                  </div>
+                  <span className="info-chip">Production</span>
+                </div>
+                <h3 className="text-base font-bold text-[var(--text)] mt-2 tracking-tight">
+                  {data.experience[0].role}
+                </h3>
+                <p className="text-sm text-[var(--muted)] mt-0.5">
+                  {data.experience[0].company}
+                </p>
+                <p className="text-xs font-mono text-[var(--muted-light)] mt-1">
+                  {data.experience[0].period} &bull; Mumbai, India
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>

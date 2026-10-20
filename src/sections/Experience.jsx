@@ -1,41 +1,59 @@
 import { motion } from 'framer-motion'
+import { Award, Calendar, MapPin } from 'lucide-react'
 import { data } from '../data'
 
 export default function Experience() {
   return (
     <section id="experience" className="section-shell">
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
-        <SectionHeader kicker="Experience" title="Work that delivered measurable outcomes." />
+        <div className="section-header">
+          <p className="section-kicker">Career &amp; Engineering</p>
+          <h2 className="section-title">Measurable outcomes in production engineering.</h2>
+        </div>
 
-        <div className="grid gap-5">
+        <div className="grid gap-6">
           {data.experience.map((item, index) => (
             <motion.article
               key={`${item.company}-${item.role}`}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: index * 0.08 }}
-              className="surface-card p-6 sm:p-7"
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className="surface-card p-6 sm:p-8"
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 pb-5 border-b border-[var(--surface-border)]">
                 <div>
-                  <p className="section-kicker">{item.company}</p>
-                  <h3 className="text-2xl font-display mt-2">{item.role}</h3>
-                  {item.badge && <span className="info-chip mt-4 inline-flex">{item.badge}</span>}
+                  <div className="flex items-center gap-2">
+                    <span className="section-kicker text-xs">{item.company}</span>
+                    {item.badge && (
+                      <span className="info-chip inline-flex items-center gap-1">
+                        <Award size={12} />
+                        {item.badge}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold mt-1 text-[var(--text)] tracking-tight">
+                    {item.role}
+                  </h3>
                 </div>
 
-                <div className="text-sm muted-text md:text-right">
-                  <p>{item.period}</p>
-                  <p className="mt-1">{item.location}</p>
-                  <p className="mt-1">{item.type}</p>
+                <div className="flex flex-wrap md:flex-col md:items-end gap-2 md:gap-1 text-xs font-mono text-[var(--muted-light)]">
+                  <span className="inline-flex items-center gap-1.5 font-medium">
+                    <Calendar size={13} className="text-[var(--accent)]" />
+                    {item.period}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 font-medium">
+                    <MapPin size={13} className="text-[var(--accent)]" />
+                    {item.location} &bull; {item.type}
+                  </span>
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-3 mt-6">
+              <div className="grid sm:grid-cols-2 gap-3 mt-5">
                 {item.highlights.map((highlight) => (
                   <div key={highlight} className="list-card">
                     <span className="list-dot" />
-                    <p className="body-copy">{highlight}</p>
+                    <p className="body-copy text-sm leading-relaxed">{highlight}</p>
                   </div>
                 ))}
               </div>
@@ -44,14 +62,5 @@ export default function Experience() {
         </div>
       </div>
     </section>
-  )
-}
-
-function SectionHeader({ kicker, title }) {
-  return (
-    <div className="section-header">
-      <p className="section-kicker">{kicker}</p>
-      <h2 className="section-title">{title}</h2>
-    </div>
   )
 }
