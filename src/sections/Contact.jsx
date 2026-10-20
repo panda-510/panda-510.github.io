@@ -55,14 +55,17 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45 }}
-          className="surface-card contact-panel p-6 sm:p-9"
+          className="surface-card p-6 sm:p-9"
         >
-          <p className="section-kicker">Get in Touch</p>
+          <span className="section-kicker">
+            <span className="section-kicker-dot" />
+            GET IN TOUCH
+          </span>
           <h2 className="section-title max-w-2xl">
-            Let’s discuss engineering roles, payment infrastructure, and AI systems.
+            Let's build something impactful together.
           </h2>
           <p className="body-copy mt-4 max-w-2xl text-[1rem]">
-            Based in {data.personal.location}. Open to software engineering roles, Generative AI integration, and building reliable production systems.
+            Feel free to reach out for opportunities, collaborations, or questions. Based in {data.personal.location}.
           </p>
 
           <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-8">
@@ -77,7 +80,7 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="surface-subcard contact-card p-4 hover:-translate-y-1 transition-all duration-200"
+                  className="surface-subcard p-4 hover:-translate-y-1 transition-all duration-200"
                 >
                   <div className="flex flex-col">
                     <div className="flex items-center justify-between">
@@ -91,7 +94,7 @@ export default function Contact() {
                         aria-label={`Copy ${link.label}`}
                         title={`Copy ${link.label}`}
                       >
-                        {copiedThis ? <Check size={13} className="text-[var(--accent)]" /> : <Copy size={13} />}
+                        {copiedThis ? <Check size={13} className="text-[#6366F1]" /> : <Copy size={13} />}
                       </button>
                     </div>
 
@@ -104,12 +107,12 @@ export default function Contact() {
                       <div className="flex items-center justify-between">
                         <p className="muted-text text-xs uppercase tracking-wider font-mono font-semibold">{link.label}</p>
                         {link.href.startsWith('http') && (
-                          <ExternalLink size={12} className="text-[var(--muted-light)] group-hover:text-[var(--accent)] transition-colors" />
+                          <ExternalLink size={12} className="text-[var(--muted-light)] group-hover:text-[#6366F1] transition-colors" />
                         )}
                       </div>
                       <p
-                        className="text-sm font-semibold mt-1 text-[var(--text)] group-hover:text-[var(--accent)] transition-colors"
-                        style={{ wordBreak: 'break-all', overflowWrap: 'anywhere' }}
+                        className="text-xs sm:text-[0.82rem] font-semibold mt-1 text-[var(--text)] group-hover:text-[#6366F1] transition-colors truncate"
+                        title={link.display}
                       >
                         {link.display}
                       </p>

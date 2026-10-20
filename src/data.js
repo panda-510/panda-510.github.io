@@ -1,32 +1,33 @@
 export const data = {
   personal: {
     name: 'Aditya Panda',
-    title: 'Software Engineer',
-    subtitle: 'Generative AI Applications & Payment Infrastructure',
+    rolePill: 'Software Engineer • Mumbai, India',
+    headlinePrefix: 'Building products\nat the intersection of',
+    headlineHighlight: 'payments and AI.',
+    heroBio:
+      "I'm a Software Engineer at NTT DATA Payment Services, building scalable payment integrations, internal platforms and AI-powered tools. I enjoy turning complex problems into simple, elegant solutions.",
     email: 'aditya.panda.510@gmail.com',
     phone: '+91-9699924623',
     location: 'Mumbai, India',
-    locationKicker: 'MUMBAI, INDIA',
-    headlineLead: 'Building intelligent systems and resilient',
-    headlineAccent: 'payment infrastructure.',
-    heroBio:
-      "I'm a Software Engineer at NTT DATA Payment Services, working on payment integrations, scalable backend systems, and AI-powered applications. I enjoy building products that solve real-world problems.",
-    linkedin: 'https://linkedin.com/in/aditya-panda',
-    linkedinDisplay: 'linkedin.com/in/aditya-panda',
+    linkedin: 'https://www.linkedin.com/in/adityapanda510/',
+    linkedinDisplay: 'in/adityapanda510',
     github: 'https://github.com/panda-510',
     githubDisplay: 'github.com/panda-510',
     website: 'https://panda-510.github.io',
     websiteDisplay: 'panda-510.github.io',
     resume: `${import.meta.env.BASE_URL}Aditya_Panda_Resume.pdf`,
     summary:
-      'Full-Stack Software Engineer specializing in Generative AI application development — LLM integration, RAG pipelines, prompt engineering, AI-powered form generation, and LangChain-based agentic systems — alongside payment infrastructure and backend systems. Delivered 40–60% efficiency gains through AI/ML automation and API tooling across 10+ enterprise clients.',
-    taglines: [
-      'Generative AI & LLM application development',
-      'RAG pipelines & LangChain agentic systems',
-      'Payment gateway SDKs & secure infrastructure',
-      'AI-powered form generation',
-    ],
+      'Software Engineer at NTT DATA Payment Services working on payment SDKs, internal platforms, and GenAI automation tools. Delivered 40–60% efficiency gains across 10+ enterprise clients.',
   },
+
+  heroTechStack: [
+    { name: 'React.js', icon: 'react' },
+    { name: 'Node.js', icon: 'node' },
+    { name: 'Python', icon: 'python' },
+    { name: 'Go', icon: 'go' },
+    { name: 'Flutter', icon: 'flutter' },
+    { name: 'FastAPI', icon: 'fastapi' },
+  ],
 
   stats: [
     { value: '40–60%', label: 'Efficiency gains via AI/ML', icon: 'zap' },
@@ -51,8 +52,8 @@ export const data = {
       'NLP',
       'ChromaDB',
     ],
-    languages: ['Python', 'JavaScript', 'Dart'],
-    frontend: ['Flutter', 'React.js', 'Formik', 'Android SDK', 'Cross-platform Development'],
+    languages: ['Python', 'JavaScript', 'Dart', 'Go'],
+    frontend: ['Flutter', 'React.js', 'Next.js', 'Formik', 'Android SDK', 'Cross-platform Development'],
     backend: ['Node.js', 'FastAPI', 'REST API Development'],
     databases: ['ChromaDB', 'Firebase', 'MongoDB', 'SQL', 'NoSQL'],
     tools: ['Git', 'Postman', 'Jira', 'API Integration', 'Agile/Scrum'],
@@ -68,6 +69,7 @@ export const data = {
       type: 'Full-time',
       badge: 'Best Rookie Award (2024)',
       highlights: [
+        'Working on SDK development and payment gateway integrations across multiple platforms.',
         'Engineered 3 SDK kits in Node.js, Flutter, and Go for payment gateway APIs, cutting onboarding time by 40% and support tickets by 20%.',
         'Partnered with 10+ organizations across education, NGO, and government sectors to translate requirements into secure checkout solutions.',
         'Delivered 3 products — a LangChain + RAG LLM chatbot, Configurable Form Builder, and AI Form Builder — via GenAI automation, cutting developer queries by 30% and build overhead by 60%.',
@@ -88,58 +90,87 @@ export const data = {
 
   projects: [
     {
-      name: 'AI Form Builder (Prompt-to-Form)',
+      id: '01',
+      name: 'AI Form Builder',
+      shortName: 'AI Form Builder',
       organization: 'NTT DATA',
       period: '2025 – Present',
       category: 'Generative AI',
       status: 'Active Product',
       description:
-        'Extended the form builder into an AI-powered form generator: a single prompt (e.g., “create a donation form”) makes an LLM fetch relevant fields and assemble a ready-to-use payment form.',
+        'Generates ready-to-use payment forms from a single text prompt with custom theme and field controls.',
       stack: ['React.js', 'Node.js', 'LLM APIs', 'Prompt Engineering'],
+      type: 'form',
       bullets: [
-        'Extended the form builder into an AI-powered form generator: a single prompt (e.g., “create a donation form”) makes an LLM fetch relevant fields and assemble a ready-to-use payment form.',
+        'Extended the form builder into an AI-powered form generator: a single prompt makes an LLM assemble ready-to-use payment forms.',
         'Added 4 customization controls: theme and color, add/delete fields, receipt parameters, and receipt header styling, so non-technical users need zero developer effort.',
       ],
     },
     {
-      name: 'RAG-Based LLM Chatbot (Nisa)',
-      organization: 'NTT DATA',
-      period: '2024 – Present',
-      category: 'RAG & AI Product',
-      status: 'Production',
-      description:
-        'Architected a Retrieval-Augmented Generation (RAG) pipeline with LangChain, indexing API documentation as embeddings in a ChromaDB vector store for NLP responses via OpenAI LLM APIs.',
-      stack: ['LangChain', 'ChromaDB', 'OpenAI', 'FastAPI', 'Python'],
-      bullets: [
-        'Architected a Retrieval-Augmented Generation (RAG) pipeline with LangChain, indexing API documentation as embeddings in a ChromaDB vector store for NLP responses via OpenAI LLM APIs.',
-        'Automated query resolution end-to-end, driving a 30% reduction in ticket volume and shortening new-hire ramp-up time.',
-      ],
-    },
-    {
-      name: 'Configurable Generic Form Builder',
+      id: '02',
+      name: 'Generic Form Builder',
+      shortName: 'Generic Form Builder',
       organization: 'NTT DATA',
       period: '2024 – Present',
       category: 'Internal Tool & Platform',
       status: 'Production',
       description:
-        'Assessed merchant signup patterns to build a reusable drag-and-drop form builder with field-level configuration, transaction status API hooks, Excel bulk upload, and customizable receipt generation.',
+        'Drag-and-drop form builder with conditional logic, versioning, transaction status hooks, and Excel upload.',
       stack: ['React.js', 'Node.js', 'REST APIs', 'Excel'],
+      type: 'builder',
       bullets: [
-        'Assessed merchant signup patterns to build a reusable drag-and-drop form builder with field-level configuration, transaction status API hooks, Excel bulk upload, and customizable receipt generation.',
-        'Eliminated per-merchant custom form work, cutting build effort by 60% and go-live time by 50% across 10+ deployments; now NTT DATA’s standard internal tool.',
+        'Assessed merchant signup patterns to build a reusable drag-and-drop form builder with field-level configuration and transaction status API hooks.',
+        'Eliminated per-merchant custom form work, cutting build effort by 60% and go-live time by 50% across 10+ deployments; now standard internal tool.',
       ],
     },
     {
+      id: '03',
+      name: 'Payment SDKs',
+      shortName: 'Payment SDKs',
+      organization: 'NTT DATA',
+      period: '2024 – Present',
+      category: 'Developer Tooling & Infrastructure',
+      status: 'Production',
+      description:
+        'Payment gateway SDK kits in Node.js, Flutter, and Go, cutting merchant onboarding time by 40%.',
+      stack: ['Node.js', 'Flutter', 'Go', 'Python'],
+      type: 'code',
+      bullets: [
+        'Engineered 3 SDK kits in Node.js, Flutter, and Go for payment gateway APIs, cutting onboarding time by 40% and support tickets by 20%.',
+        'Partnered with 10+ organizations across education, NGO, and government sectors to translate requirements into secure checkout solutions.',
+      ],
+    },
+    {
+      id: '04',
+      name: 'RAG-Based LLM Chatbot (Nisa)',
+      shortName: 'NISA RAG Chatbot',
+      organization: 'NTT DATA',
+      period: '2024 – Present',
+      category: 'RAG & AI Product',
+      status: 'Production',
+      description:
+        'LangChain and ChromaDB RAG pipeline indexing API docs to answer developer queries via OpenAI.',
+      stack: ['LangChain', 'ChromaDB', 'OpenAI', 'FastAPI', 'Python'],
+      type: 'chat',
+      bullets: [
+        'Architected a Retrieval-Augmented Generation (RAG) pipeline with LangChain, indexing API documentation as embeddings in ChromaDB.',
+        'Automated query resolution end-to-end, driving a 30% reduction in ticket volume and shortening new-hire ramp-up time.',
+      ],
+    },
+    {
+      id: '05',
       name: 'Lucrente',
+      shortName: 'Lucrente Rental App',
       organization: 'Freelance Software Developer',
       period: 'Jan 2024 – May 2024',
       category: 'Mobile Application',
       status: 'Shipped',
       description:
-        'Shipped Lucrente, a cross-platform Flutter rental app with a 2-sided landlord/tenant marketplace, property listings, booking workflows, and Razorpay payment integration.',
+        'Cross-platform Flutter rental marketplace app with property listings and Razorpay payment integration.',
       stack: ['Flutter', 'Dart', 'Razorpay', 'Cross-platform'],
+      type: 'mobile',
       bullets: [
-        'Shipped Lucrente, a cross-platform Flutter rental app with a 2-sided landlord/tenant marketplace, property listings, booking workflows, and Razorpay payment integration.',
+        'Shipped Lucrente, a cross-platform Flutter rental app with a 2-sided landlord/tenant marketplace, property listings, and Razorpay payment integration.',
       ],
     },
   ],
@@ -161,5 +192,5 @@ export const data = {
     },
   ],
 
-  nav: ['About', 'Experience', 'Projects', 'Skills', 'Education', 'Resume', 'Contact'],
+  nav: ['About', 'Experience', 'Projects', 'Skills', 'Education'],
 }

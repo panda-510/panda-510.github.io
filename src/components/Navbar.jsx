@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ArrowRight, Linkedin, Menu, Moon, Sun, X } from 'lucide-react'
+import { ArrowRight, Menu, Moon, Sun, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { data } from '../data'
 
@@ -51,11 +51,11 @@ export default function Navbar({ theme, onToggleTheme }) {
             ))}
           </div>
 
-          {/* Right Actions */}
+          {/* Right Actions: Theme Toggle + Let's Connect Button */}
           <div className="flex items-center gap-2.5">
             <button
               onClick={onToggleTheme}
-              className="icon-button"
+              className="icon-button rounded-full"
               aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
               title={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
             >
@@ -63,19 +63,16 @@ export default function Navbar({ theme, onToggleTheme }) {
             </button>
 
             <a
-              href={data.personal.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button-dark hidden sm:inline-flex group"
+              href={`mailto:${data.personal.email}`}
+              className="button-dark hidden sm:inline-flex group items-center gap-2"
             >
-              <Linkedin size={14} />
-              <span>LinkedIn</span>
-              <ArrowRight size={13} className="stripe-arrow" />
+              <span>Let's Connect</span>
+              <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
             </a>
 
             <button
               onClick={() => setMenuOpen((open) => !open)}
-              className="icon-button md:hidden"
+              className="icon-button md:hidden rounded-full"
               aria-label="Toggle navigation"
             >
               {menuOpen ? <X size={17} /> : <Menu size={17} />}
@@ -106,13 +103,10 @@ export default function Navbar({ theme, onToggleTheme }) {
               ))}
               <div className="pt-2 mt-2 border-t border-[var(--surface-border)]">
                 <a
-                  href={data.personal.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`mailto:${data.personal.email}`}
                   className="button-dark w-full justify-center gap-2"
                 >
-                  <Linkedin size={15} />
-                  <span>LinkedIn</span>
+                  <span>Let's Connect</span>
                   <ArrowRight size={14} />
                 </a>
               </div>

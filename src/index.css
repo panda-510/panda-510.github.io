@@ -5,83 +5,83 @@
 @tailwind utilities;
 
 /* ==========================================================================
-   Stripe.com Inspired Design System
-   Pure Crisp White Foundation, Stripe Prismatic Mesh Gradient,
-   Stripe Navy (#0A2540), Blurple (#635BFF) & Cyan Accents
+   Design System Tokens (Exact Match to User Reference Mockup)
+   Pure White Canvas, Soft Lilac/Cyan Mesh Glows, Deep Black CTAs,
+   and Indigo Purple (#6366F1) Accents
    ========================================================================== */
 
 :root {
-  /* Stripe Pure White Palette */
+  /* Crisp White Foundation */
   --bg: #FFFFFF;
-  --bg-soft: #F6F9FC;
+  --bg-soft: #F8FAFC;
   --bg-strong: #FFFFFF;
-  --surface-border: #E3E8EE;
+  --surface-border: #E2E8F0;
   --surface-border-hover: #CBD5E1;
-  --surface-shadow: 0 2px 4px -1px rgba(50, 50, 93, 0.05), 0 14px 32px -4px rgba(50, 50, 93, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --surface-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 20px 45px -10px rgba(0, 0, 0, 0.06);
 
-  /* Stripe Signature Typography Colors */
-  --text: #0A2540;          /* Stripe Dark Navy */
-  --muted: #425466;         /* Stripe Body Slate */
-  --muted-light: #697386;   /* Stripe Subdued Slate */
+  /* Typography Colors */
+  --text: #0B0F19;          /* Deep Slate Black */
+  --muted: #475569;         /* Neutral Body Slate */
+  --muted-light: #94A3B8;   /* Light Slate */
 
-  /* Stripe Brand Accent: Iconic Blurple */
-  --accent: #635BFF;
-  --accent-soft: rgba(99, 91, 255, 0.08);
-  --accent-subtle: rgba(99, 91, 255, 0.04);
-  --accent-strong: #0A2540;
+  /* Vibrant Indigo / Purple Accent from Mockup */
+  --accent: #6366F1;
+  --accent-soft: rgba(99, 102, 241, 0.10);
+  --accent-subtle: rgba(99, 102, 241, 0.05);
+  --accent-strong: #4F46E5;
   --accent-contrast: #FFFFFF;
 
   /* Button Tokens */
-  --btn-dark-bg: #0A2540;
+  --btn-dark-bg: #0B0F19;
   --btn-dark-text: #FFFFFF;
-  --btn-outline-border: #E3E8EE;
-  --btn-outline-text: #0A2540;
+  --btn-outline-border: #E2E8F0;
+  --btn-outline-text: #0B0F19;
 
   /* Subdued Grid & Progress */
-  --grid: rgba(99, 91, 255, 0.04);
-  --progress: linear-gradient(90deg, #635BFF 0%, #00D4FF 100%);
+  --grid: rgba(226, 232, 240, 0.6);
+  --progress: linear-gradient(90deg, #6366F1 0%, #A855F7 100%);
 
   /* Tag & Chip tokens */
-  --chip-bg: #F6F9FC;
-  --chip-border: #E3E8EE;
-  --chip-text: #0A2540;
+  --chip-bg: #FFFFFF;
+  --chip-border: #E2E8F0;
+  --chip-text: #0F172A;
 }
 
 [data-theme='dark'] {
-  /* Stripe Midnight Dark Navy */
-  --bg: #08101E;
-  --bg-soft: #0E1A2E;
-  --bg-strong: #12213A;
-  --surface-border: #1C3052;
-  --surface-border-hover: #294473;
+  /* Deep Obsidian Navy */
+  --bg: #07090E;
+  --bg-soft: #0D131F;
+  --bg-strong: #121A2B;
+  --surface-border: #1E293B;
+  --surface-border-hover: #334155;
   --surface-shadow: 0 4px 24px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.6);
 
   /* Typography Colors */
-  --text: #F6F9FC;
-  --muted: #A1B0CB;
-  --muted-light: #697A9B;
+  --text: #F8FAFC;
+  --muted: #94A3B8;
+  --muted-light: #64748B;
 
-  /* Luminous Blurple & Cyan */
-  --accent: #7A73FF;
-  --accent-soft: rgba(122, 115, 255, 0.16);
-  --accent-subtle: rgba(122, 115, 255, 0.08);
-  --accent-strong: #00D4FF;
-  --accent-contrast: #08101E;
+  /* Luminous Indigo & Purple */
+  --accent: #818CF8;
+  --accent-soft: rgba(129, 140, 248, 0.16);
+  --accent-subtle: rgba(129, 140, 248, 0.08);
+  --accent-strong: #A78BFA;
+  --accent-contrast: #07090E;
 
   /* Button Tokens */
-  --btn-dark-bg: #F6F9FC;
-  --btn-dark-text: #08101E;
-  --btn-outline-border: #294473;
-  --btn-outline-text: #F6F9FC;
+  --btn-dark-bg: #F8FAFC;
+  --btn-dark-text: #07090E;
+  --btn-outline-border: #334155;
+  --btn-outline-text: #F8FAFC;
 
   /* Subdued Grid & Progress */
-  --grid: rgba(255, 255, 255, 0.03);
-  --progress: linear-gradient(90deg, #7A73FF 0%, #00D4FF 100%);
+  --grid: rgba(255, 255, 255, 0.04);
+  --progress: linear-gradient(90deg, #818CF8 0%, #C084FC 100%);
 
   /* Tag & Chip tokens */
-  --chip-bg: #0E1A2E;
-  --chip-border: #1C3052;
-  --chip-text: #7A73FF;
+  --chip-bg: #0D131F;
+  --chip-border: #1E293B;
+  --chip-text: #E2E8F0;
 }
 
 * {
@@ -117,28 +117,25 @@ button {
 }
 
 /* ==========================================================================
-   Stripe Iconic Prismatic Gradient Mesh & Ambient Canvas
-   Pure white base with diagonal sweeps of cyan, blurple, violet and coral
+   Background Architecture matching Reference Mockup
+   Pure White with delicate vertical lines and soft purple/cyan mesh glow
    ========================================================================== */
 
 .app-shell {
   min-height: 100vh;
   position: relative;
   background:
-    radial-gradient(at 0% 0%, rgba(99, 91, 255, 0.14) 0px, transparent 55%),
-    radial-gradient(at 48% 0%, rgba(0, 212, 255, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(255, 115, 160, 0.11) 0px, transparent 50%),
-    radial-gradient(at 85% 35%, rgba(99, 91, 255, 0.08) 0px, transparent 45%),
+    radial-gradient(ellipse 65% 45% at 75% 25%, rgba(167, 139, 250, 0.22) 0%, rgba(192, 132, 252, 0.12) 30%, rgba(199, 210, 254, 0.15) 55%, transparent 75%),
+    radial-gradient(circle at 92% 38%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
     #FFFFFF;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 [data-theme='dark'] .app-shell {
   background:
-    radial-gradient(at 0% 0%, rgba(99, 91, 255, 0.2) 0px, transparent 55%),
-    radial-gradient(at 50% 0%, rgba(0, 212, 255, 0.18) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(255, 115, 160, 0.12) 0px, transparent 50%),
-    #08101E;
+    radial-gradient(ellipse 65% 45% at 75% 25%, rgba(129, 140, 248, 0.18) 0%, rgba(192, 132, 252, 0.1) 30%, transparent 70%),
+    radial-gradient(circle at 92% 38%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
+    #07090E;
 }
 
 .background-layer {
@@ -149,335 +146,136 @@ button {
   z-index: 0;
 }
 
-/* Stripe Curved Prismatic Ribbons */
-.stripe-wave {
+/* Subtle Vertical Column Guide Lines */
+.background-grid-guides {
   position: absolute;
-  top: 0;
-  left: -20%;
-  right: -20%;
-  height: 620px;
-  background: linear-gradient(135deg, rgba(99, 91, 255, 0.12) 0%, rgba(0, 212, 255, 0.14) 40%, rgba(255, 115, 160, 0.09) 80%, transparent 100%);
-  transform: skewY(-4.5deg);
-  transform-origin: top left;
-  filter: blur(40px);
+  inset: 0;
+  background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px);
+  background-size: clamp(160px, 16.666vw, 240px) 100%;
+  mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0.5) 60%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0.5) 60%, transparent 95%);
+}
+
+/* 3D Glass Layer Accents behind Right Card */
+.glass-3d-card-one {
+  position: absolute;
+  top: 14%;
+  right: -2%;
+  width: 220px;
+  height: 320px;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(216, 180, 254, 0.2) 100%);
+  border: 1px solid rgba(192, 132, 252, 0.4);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.12);
+  transform: rotate(12deg) skewY(-8deg);
+  backdrop-filter: blur(12px);
   pointer-events: none;
 }
 
-[data-theme='dark'] .stripe-wave {
-  background: linear-gradient(135deg, rgba(99, 91, 255, 0.22) 0%, rgba(0, 212, 255, 0.2) 40%, rgba(255, 115, 160, 0.12) 80%, transparent 100%);
-}
-
-.background-orb {
+.glass-3d-card-two {
   position: absolute;
-  border-radius: 999px;
-  filter: blur(90px);
-  opacity: 0.55;
+  top: 22%;
+  right: -6%;
+  width: 200px;
+  height: 280px;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(56, 189, 248, 0.2) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.12);
+  transform: rotate(20deg) skewY(-10deg);
+  backdrop-filter: blur(8px);
+  pointer-events: none;
 }
 
-.orb-one {
-  width: 32rem;
-  height: 32rem;
-  top: 2rem;
-  left: -8rem;
-  background: radial-gradient(circle, rgba(99, 91, 255, 0.2) 0%, rgba(0, 212, 255, 0.08) 60%, transparent 100%);
+[data-theme='dark'] .glass-3d-card-one {
+  background: linear-gradient(135deg, rgba(18, 26, 43, 0.7) 0%, rgba(139, 92, 246, 0.2) 100%);
+  border-color: rgba(139, 92, 246, 0.3);
 }
 
-.orb-two {
-  width: 36rem;
-  height: 36rem;
-  right: -10rem;
-  top: 6rem;
-  background: radial-gradient(circle, rgba(0, 212, 255, 0.18) 0%, rgba(255, 115, 160, 0.08) 60%, transparent 100%);
-}
-
-[data-theme='dark'] .orb-one {
-  background: rgba(99, 91, 255, 0.22);
-}
-
-[data-theme='dark'] .orb-two {
-  background: rgba(0, 212, 255, 0.16);
-}
-
-/* Stripe Subtle Diagonal Grid */
-.stripe-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, var(--grid) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0.6) 40%, transparent 80%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0.6) 40%, transparent 80%);
+[data-theme='dark'] .glass-3d-card-two {
+  background: linear-gradient(135deg, rgba(18, 26, 43, 0.5) 0%, rgba(56, 189, 248, 0.15) 100%);
+  border-color: rgba(56, 189, 248, 0.25);
 }
 
 /* ==========================================================================
-   Typography & Sections
+   Typography & Headers
    ========================================================================== */
 
-.section-stack {
-  position: relative;
-}
-
 .section-shell {
-  padding: 4rem 0 1.5rem;
-}
-
-.hero-section {
-  position: relative;
-}
-
-.section-header {
-  margin-bottom: 2.25rem;
+  padding: 4.5rem 0 1.5rem;
 }
 
 .section-kicker {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.74rem;
-  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 600;
+  color: #64748B;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-kicker-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--accent);
 }
 
 .section-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(2.2rem, 3.8vw, 3.6rem);
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.12;
   letter-spacing: -0.035em;
-  margin-top: 0.5rem;
-  max-width: 54rem;
+  margin-top: 0.45rem;
   color: var(--text);
 }
 
 .hero-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
-  font-size: clamp(2.8rem, 5vw, 4.4rem);
-  line-height: 1.05;
+  font-size: clamp(2.75rem, 5vw, 4.35rem);
+  line-height: 1.06;
   letter-spacing: -0.04em;
   color: var(--text);
 }
 
-.hero-gradient-text {
-  background: linear-gradient(135deg, #635BFF 0%, #00D4FF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-[data-theme='dark'] .hero-gradient-text {
-  background: linear-gradient(135deg, #7A73FF 0%, #00D4FF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero-accent-text {
+  color: var(--accent);
+  font-weight: 800;
 }
 
 .hero-badge-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  padding: 0.45rem 1rem;
+  gap: 0.55rem;
+  padding: 0.4rem 0.95rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid var(--surface-border);
-  box-shadow: 0 1px 3px rgba(50, 50, 93, 0.05);
-  font-size: 0.84rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  font-size: 0.82rem;
   font-weight: 600;
-  color: var(--text);
+  color: #334155;
   backdrop-filter: blur(10px);
 }
 
 [data-theme='dark'] .hero-badge-pill {
-  background: rgba(18, 33, 58, 0.85);
+  background: rgba(18, 26, 43, 0.85);
+  color: #CBD5E1;
 }
 
 .body-copy {
   color: var(--muted);
-  line-height: 1.7;
-  font-size: 1.05rem;
-}
-
-.muted-text {
-  color: var(--muted);
-}
-
-.accent-text {
-  color: var(--accent);
+  line-height: 1.68;
+  font-size: 1.02rem;
 }
 
 /* ==========================================================================
-   Stripe Surface Cards & Elevation
-   ========================================================================== */
-
-.surface-card {
-  background: var(--bg-strong);
-  border: 1px solid var(--surface-border);
-  box-shadow: var(--surface-shadow);
-  border-radius: 1.25rem;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.surface-card:hover {
-  border-color: var(--surface-border-hover);
-  box-shadow: 0 4px 6px -1px rgba(50, 50, 93, 0.07), 0 20px 40px -4px rgba(50, 50, 93, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05);
-  transform: translateY(-2px);
-}
-
-.stripe-card-header {
-  border-bottom: 1px solid var(--surface-border);
-  padding: 1rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--bg-soft);
-  border-top-left-radius: 1.25rem;
-  border-top-right-radius: 1.25rem;
-}
-
-.surface-subcard,
-.meta-card,
-.list-card {
-  background: var(--bg-soft);
-  border: 1px solid var(--surface-border);
-  border-radius: 0.9rem;
-}
-
-.meta-card {
-  padding: 1rem 1.15rem;
-}
-
-.list-card {
-  display: flex;
-  gap: 0.85rem;
-  padding: 0.95rem 1.1rem;
-  align-items: flex-start;
-  transition: border-color 0.2s ease;
-}
-
-.list-card.compact {
-  padding: 0.85rem 1rem;
-}
-
-.list-dot {
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 999px;
-  background: var(--accent);
-  flex-shrink: 0;
-  margin-top: 0.55rem;
-}
-
-/* ==========================================================================
-   Stripe Dashboard & Metric Card
-   ========================================================================== */
-
-.stripe-dashboard-card {
-  background: var(--bg-strong);
-  border: 1px solid var(--surface-border);
-  box-shadow: 0 4px 6px -1px rgba(50, 50, 93, 0.07), 0 24px 50px -6px rgba(50, 50, 93, 0.12), 0 1px 3px rgba(0, 0, 0, 0.04);
-  border-radius: 1.5rem;
-  overflow: hidden;
-  backdrop-filter: blur(16px);
-}
-
-.stripe-terminal-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.85rem 1.5rem;
-  background: var(--bg-soft);
-  border-bottom: 1px solid var(--surface-border);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.76rem;
-  color: var(--muted);
-}
-
-.stripe-dots {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.stripe-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-}
-
-.stat-icon-badge {
-  width: 2.35rem;
-  height: 2.35rem;
-  border-radius: 0.75rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-soft);
-  color: var(--accent);
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
-}
-
-.stat-row:hover .stat-icon-badge {
-  transform: scale(1.08);
-}
-
-.stat-value {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.25rem;
-  line-height: 1.15;
-  font-weight: 800;
-  color: var(--text);
-  letter-spacing: -0.02em;
-}
-
-.stat-label {
-  font-size: 0.82rem;
-  color: var(--muted);
-  line-height: 1.35;
-  font-weight: 500;
-}
-
-/* ==========================================================================
-   Chips & Badges
-   ========================================================================== */
-
-.info-chip,
-.tag-chip {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.35rem 0.8rem;
-  border-radius: 999px;
-  border: 1px solid var(--chip-border);
-  background: var(--chip-bg);
-  color: var(--chip-text);
-  font-size: 0.82rem;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-.tag-chip:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-subtle);
-}
-
-.info-chip {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.05em;
-  background: var(--accent-soft);
-  color: var(--accent);
-  border-color: transparent;
-  font-weight: 600;
-}
-
-.skill-chip {
-  background: var(--chip-bg);
-  color: var(--chip-text);
-}
-
-/* ==========================================================================
-   Stripe Buttons & Interactive Elements
+   Buttons (Matching Reference Mockup)
    ========================================================================== */
 
 .button-primary,
@@ -495,68 +293,62 @@ button {
   white-space: nowrap;
 }
 
-/* Stripe Blurple Primary Button */
+/* Deep Black Hero Primary CTA: View my work -> */
 .button-primary {
-  padding: 0.85rem 1.55rem;
-  background: var(--accent);
-  color: var(--accent-contrast);
+  padding: 0.85rem 1.65rem;
+  background: var(--btn-dark-bg);
+  color: var(--btn-dark-text);
   font-weight: 600;
-  font-size: 0.94rem;
+  font-size: 0.95rem;
   border: 1px solid transparent;
-  box-shadow: 0 4px 14px rgba(99, 91, 255, 0.3);
+  box-shadow: 0 4px 14px rgba(11, 15, 25, 0.2);
 }
 
 .button-primary:hover {
   transform: translateY(-1px);
-  background: #0A2540;
-  box-shadow: 0 6px 20px rgba(10, 37, 64, 0.3);
+  background: #1E293B;
+  box-shadow: 0 6px 20px rgba(11, 15, 25, 0.28);
+}
+
+[data-theme='dark'] .button-primary {
+  background: #FFFFFF;
+  color: #07090E;
 }
 
 [data-theme='dark'] .button-primary:hover {
-  background: #00D4FF;
-  color: #08101E;
+  background: #F1F5F9;
 }
 
-/* Stripe Hover Arrow Animation */
-.stripe-arrow {
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-button:hover .stripe-arrow,
-a:hover .stripe-arrow {
-  transform: translateX(3px);
-}
-
-/* Stripe Outlined Secondary Button */
+/* Secondary Button: Download resume */
 .button-outline {
-  padding: 0.85rem 1.55rem;
+  padding: 0.85rem 1.65rem;
   background: #FFFFFF;
-  border: 1px solid var(--btn-outline-border);
-  color: var(--btn-outline-text);
-  font-size: 0.94rem;
+  border: 1px solid var(--surface-border);
+  color: var(--text);
+  font-size: 0.95rem;
   font-weight: 600;
-  box-shadow: 0 1px 3px rgba(50, 50, 93, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .button-outline:hover {
   transform: translateY(-1px);
+  background: #F8FAFC;
   border-color: #CBD5E1;
-  background: #F6F9FC;
-  box-shadow: 0 3px 6px rgba(50, 50, 93, 0.08);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
 }
 
 [data-theme='dark'] .button-outline {
-  background: #12213A;
-  color: #F6F9FC;
+  background: #121A2B;
+  color: #F8FAFC;
 }
 
 [data-theme='dark'] .button-outline:hover {
-  background: #162544;
+  background: #1A2438;
 }
 
-/* Dark Pill Button (Stripe Navy) */
+/* Navbar CTA: Let's Connect -> */
 .button-dark {
-  padding: 0.55rem 1.25rem;
+  padding: 0.58rem 1.35rem;
   background: var(--btn-dark-bg);
   color: var(--btn-dark-text);
   border: 1px solid transparent;
@@ -565,40 +357,318 @@ a:hover .stripe-arrow {
 }
 
 .button-dark:hover {
-  background: var(--accent);
+  opacity: 0.9;
   transform: translateY(-1px);
 }
 
-.button-secondary {
-  padding: 0.85rem 1.35rem;
-  background: var(--bg-strong);
-  border: 1px solid var(--surface-border);
-  color: var(--text);
-  font-size: 0.94rem;
-  font-weight: 600;
-}
-
-.button-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-1px);
+[data-theme='dark'] .button-dark {
+  background: #FFFFFF;
+  color: #07090E;
 }
 
 .icon-button {
-  width: 2.45rem;
-  height: 2.45rem;
-  background: var(--bg-strong);
+  width: 2.35rem;
+  height: 2.35rem;
+  background: #FFFFFF;
   border: 1px solid var(--surface-border);
   color: var(--muted);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
 .icon-button:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: #CBD5E1;
+  color: var(--text);
+}
+
+[data-theme='dark'] .icon-button {
+  background: #121A2B;
 }
 
 /* ==========================================================================
-   Stripe Navigation
+   Surface Cards & Elevation
+   ========================================================================== */
+
+.surface-card {
+  background: var(--bg-strong);
+  border: 1px solid var(--surface-border);
+  box-shadow: var(--surface-shadow);
+  border-radius: 1.5rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.surface-card:hover {
+  border-color: var(--surface-border-hover);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 24px 50px -8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Showcase Right Card from Mockup */
+.showcase-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 20px 50px -10px rgba(11, 15, 25, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  border-radius: 1.75rem;
+  padding: 1.75rem 2rem;
+  backdrop-filter: blur(16px);
+  position: relative;
+  z-index: 10;
+}
+
+[data-theme='dark'] .showcase-card {
+  background: rgba(18, 26, 43, 0.92);
+  border-color: rgba(30, 41, 59, 0.9);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+}
+
+.stat-icon-badge {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.stat-value {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+/* Tech Stack Pill Bar */
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 0.95rem;
+  border-radius: 999px;
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.tech-pill:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+[data-theme='dark'] .tech-pill {
+  background: #121A2B;
+}
+
+/* Skill Pills */
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem 0.8rem;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.25;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.1);
+}
+
+.skill-pill-featured {
+  background: rgba(99, 102, 241, 0.04);
+  border-color: rgba(99, 102, 241, 0.2);
+  font-weight: 600;
+}
+
+[data-theme='dark'] .skill-pill-featured {
+  background: rgba(129, 140, 248, 0.08);
+  border-color: rgba(129, 140, 248, 0.25);
+}
+
+.skill-pill-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Card Icon Badge */
+.card-icon-badge {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.08);
+  color: var(--accent);
+  border: 1px solid rgba(99, 102, 241, 0.14);
+  flex-shrink: 0;
+}
+
+[data-theme='dark'] .card-icon-badge {
+  background: rgba(129, 140, 248, 0.12);
+  border-color: rgba(129, 140, 248, 0.22);
+}
+
+/* Metadata & Stat Box */
+.meta-stat-box {
+  background: var(--bg-soft);
+  border: 1px solid var(--surface-border);
+  border-radius: 0.85rem;
+  padding: 0.75rem 1rem;
+}
+
+/* Resume Document Preview */
+.doc-preview-card {
+  background: var(--bg-strong);
+  border: 1px solid var(--surface-border);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Featured Work Project Cards & Mini Previews
+   ========================================================================== */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.project-card {
+  background: var(--bg-strong);
+  border: 1px solid var(--surface-border);
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02), 0 16px 36px -4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 24px 50px -8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.project-card-header {
+  padding: 1.75rem 1.75rem 1rem;
+}
+
+.project-mini-preview {
+  margin: 1.25rem 1.75rem 1.75rem;
+  border-radius: 1rem;
+  border: 1px solid var(--surface-border);
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+
+/* Code Editor Preview Window */
+.code-preview-window {
+  background: #0B0F19;
+  color: #F8FAFC;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.76rem;
+  line-height: 1.6;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.code-preview-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1rem;
+  background: #131A29;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.72rem;
+  color: #94A3B8;
+}
+
+.code-preview-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.code-preview-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+}
+
+/* Form Preview Mockup */
+.form-preview-mockup {
+  padding: 1.25rem;
+  background: #F8FAFC;
+}
+
+[data-theme='dark'] .form-preview-mockup {
+  background: #0D131F;
+}
+
+/* ==========================================================================
+   Experience Timeline matching Reference Mockup
+   ========================================================================== */
+
+.timeline-track {
+  position: relative;
+  padding-left: 2.25rem;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.45rem;
+  width: 2px;
+  background: var(--surface-border);
+}
+
+.timeline-node {
+  position: absolute;
+  top: 0.25rem;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+  background: #FFFFFF;
+  border: 3px solid var(--accent);
+}
+
+[data-theme='dark'] .timeline-node {
+  background: #07090E;
+}
+
+/* ==========================================================================
+   Navigation
    ========================================================================== */
 
 .navbar-shell {
@@ -609,15 +679,15 @@ a:hover .stripe-arrow {
 }
 
 .navbar-solid .max-w-6xl {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid var(--surface-border);
   border-radius: 999px;
-  box-shadow: 0 4px 20px -2px rgba(50, 50, 93, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(16px);
 }
 
 [data-theme='dark'] .navbar-solid .max-w-6xl {
-  background: rgba(14, 26, 46, 0.85);
+  background: rgba(13, 19, 31, 0.9);
 }
 
 .brand-mark {
@@ -633,7 +703,7 @@ a:hover .stripe-arrow {
 .brand-name {
   display: block;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   font-weight: 800;
   color: var(--text);
 }
@@ -646,18 +716,14 @@ a:hover .stripe-arrow {
   align-items: center;
   justify-content: center;
   background: var(--accent);
-  color: var(--accent-contrast);
+  color: #FFFFFF;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.82rem;
   font-weight: 800;
 }
 
-[data-theme='dark'] .brand-badge {
-  color: #08101E;
-}
-
 .nav-link {
-  color: var(--muted);
+  color: #475569;
   font-size: 0.92rem;
   font-weight: 600;
   padding: 0.55rem 0.95rem;
@@ -671,6 +737,14 @@ a:hover .stripe-arrow {
 .nav-link:hover {
   color: var(--text);
   background: var(--accent-subtle);
+}
+
+[data-theme='dark'] .nav-link {
+  color: #94A3B8;
+}
+
+[data-theme='dark'] .nav-link:hover {
+  color: #FFFFFF;
 }
 
 .mobile-panel {
@@ -704,82 +778,6 @@ a:hover .stripe-arrow {
 }
 
 /* ==========================================================================
-   Resume & Contact Panels
-   ========================================================================== */
-
-.resume-panel,
-.contact-panel {
-  position: relative;
-  overflow: hidden;
-}
-
-.resume-download-card {
-  min-width: min(100%, 24rem);
-}
-
-.resume-file-row {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.resume-file-icon {
-  width: 2.85rem;
-  height: 2.85rem;
-  border-radius: 0.85rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-soft);
-  color: var(--accent);
-  flex-shrink: 0;
-}
-
-.contact-panel::after {
-  content: '';
-  position: absolute;
-  width: 16rem;
-  height: 16rem;
-  right: -4rem;
-  bottom: -6rem;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  filter: blur(60px);
-  pointer-events: none;
-}
-
-.contact-icon {
-  width: 2.65rem;
-  height: 2.65rem;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-soft);
-  color: var(--accent);
-}
-
-.copy-mini-button {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 999px;
-  border: 1px solid var(--surface-border);
-  background: var(--bg-strong);
-  color: var(--muted);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-
-.copy-mini-button:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-/* ==========================================================================
    Responsive
    ========================================================================== */
 
@@ -789,11 +787,12 @@ a:hover .stripe-arrow {
   }
 
   .section-shell {
-    padding-top: 2.5rem;
+    padding-top: 3rem;
   }
 
   .surface-card,
-  .stripe-dashboard-card {
+  .showcase-card,
+  .project-card {
     border-radius: 1.25rem;
   }
 }
