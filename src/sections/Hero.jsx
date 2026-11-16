@@ -28,10 +28,14 @@ export default function Hero() {
         <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-10 lg:gap-14 items-center">
           {/* Left Column: Headline, Bio, CTAs & Tech Stack */}
           <div>
-            <motion.div {...fadeUp(0.04)} className="mb-6">
+            <motion.div {...fadeUp(0.04)} className="mb-6 flex flex-wrap items-center gap-2.5">
               <span className="hero-badge-pill">
-                <span className="w-2 h-2 rounded-full bg-[#6366F1]" />
-                <span>{data.personal.rolePill}</span>
+                <span className="w-2 h-2 rounded-full bg-[#6366F1] animate-pulse" />
+                <span className="font-bold text-[var(--text)] tracking-tight">Aditya Panda</span>
+                <span className="text-slate-300 dark:text-slate-600 font-light">&bull;</span>
+                <span className="font-medium text-[var(--muted)]">Software Engineer</span>
+                <span className="text-slate-300 dark:text-slate-600 font-light">&bull;</span>
+                <span className="text-[var(--muted)]">Mumbai, India</span>
               </span>
             </motion.div>
 

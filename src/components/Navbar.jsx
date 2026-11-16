@@ -32,10 +32,17 @@ export default function Navbar({ theme, onToggleTheme }) {
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
           {/* Brand Mark */}
           <button onClick={() => scrollTo('about')} className="brand-mark group" aria-label="Go to top">
-            <span className="brand-badge group-hover:scale-105 transition-transform">AP</span>
-            <span className="brand-name text-xs sm:text-sm font-extrabold tracking-[0.16em] uppercase">
-              Aditya Panda
+            <span className="brand-badge group-hover:scale-105 group-hover:shadow-indigo-500/30 transition-all duration-200">
+              AP
             </span>
+            <div className="flex flex-col items-start text-left">
+              <span className="brand-name">
+                Aditya Panda
+              </span>
+              <span className="text-[0.68rem] font-mono text-[var(--muted)] font-medium hidden sm:block">
+                Software Engineer
+              </span>
+            </div>
           </button>
 
           {/* Desktop Nav Links */}

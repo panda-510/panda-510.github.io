@@ -1,16 +1,16 @@
 export const data = {
   personal: {
     name: 'Aditya Panda',
-    rolePill: 'Software Engineer • Mumbai, India',
+    rolePill: 'Aditya Panda • Software Engineer • Mumbai, India',
     headlinePrefix: 'Building products\nat the intersection of',
     headlineHighlight: 'payments and AI.',
     heroBio:
-      "I'm a Software Engineer at NTT DATA Payment Services, building scalable payment integrations, internal platforms and AI-powered tools. I enjoy turning complex problems into simple, elegant solutions.",
+      "I'm Aditya Panda, a Software Engineer at NTT DATA Payment Services, building scalable payment integrations, internal platforms and AI-powered tools. I enjoy turning complex problems into simple, elegant solutions.",
     email: 'aditya.panda.510@gmail.com',
     phone: '+91-9699924623',
     location: 'Mumbai, India',
-    linkedin: 'https://www.linkedin.com/in/adityapanda510/',
-    linkedinDisplay: 'in/adityapanda510',
+    linkedin: 'https://www.linkedin.com/in/aditya-panda-520841215/',
+    linkedinDisplay: 'in/aditya-panda-520841215',
     github: 'https://github.com/panda-510',
     githubDisplay: 'github.com/panda-510',
     website: 'https://panda-510.github.io',
